@@ -1,0 +1,75 @@
+server:
+  port: 443
+  ssl:
+    key-store: classpath:zhengshu.pfx
+    key-store-type: PKCS12
+    key-store-password: Sy03CAcI
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: zaqiu
+    password: Yfkt7kYBZsZdZKK6
+    url: jdbc:mysql://39.97.247.179/zaqiu?useUnicode=true&useSSL=false&characterEncoding=utf8
+
+
+  redis:
+    host: 39.97.247.179
+    password: asdfg.123
+    port: 6379
+    database: 0
+    jedis:
+      pool:
+        #最大连接数
+        max-active: 8
+        #最大阻塞等待时间(负数表示没限制)
+        max-wait: -1
+        #最大空闲
+        max-idle: 8
+        #最小空闲
+        min-idle: 0
+    #连接超时时间
+
+  servlet:
+    multipart:
+      max-request-size: 10000MB
+      max-file-size: 10000MB
+
+qiniu:
+  accessKey: Qa_aIWfYijDzS3orVvEosDqoUtRSlgxCokRsXWLt
+  secretKey: grjNgw7iL-IFOj0ymX54DGHukYcCHle7vffXQF-u
+  bucket: zaqiu
+
+swagger:
+  show: true
+
+#配置h5微信公众的支付
+wechat:
+  mpAppId: wx91638293be322466
+  mpAppSecret: c9598fe3835037cb67cf186d27699d3e
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  keyPath: /var/weixin_cert/h5.p12
+  templateId:
+    orderStatus: e-Cqq67QxD6YNI41iRiqawEYdFavW_7pc7LyEMb-yeQ
+
+logging:
+  level:
+    org.springframework.web: info
+    com.github.binarywang.demo.wx.miniapp: debug
+    cn.binarywang.wx.miniapp: debug
+
+wx:
+  miniapp:
+    appid: wx8886f23ea6db4812
+    secret: 53eb6a4ac7ffcf7b8bac1271cac14ebc
+    token: 111
+    aesKey: 111
+    msgDataFormat: JSON
+
+mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+#微信小程序访问的IP白名单需要下载的文件，只需第一次使用
+domainTxt: classpath:ZuAMzUdZTc.txt
