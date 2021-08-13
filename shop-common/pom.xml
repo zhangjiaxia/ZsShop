@@ -89,7 +89,7 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
-            <version>1.59</version>
+            <version>1.67</version>
         </dependency>
         <!--&lt;!&ndash;Hutool Java工具包&ndash;&gt;-->
         <dependency>
